@@ -1,0 +1,4 @@
+venv/
+.env
+__pycaceh__/
+.DS_Store
