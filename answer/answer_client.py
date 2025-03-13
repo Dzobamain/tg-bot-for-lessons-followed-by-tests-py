@@ -16,7 +16,7 @@ def check_answer(message, questions, index, correct_letter, lesson_number, level
         elif user_answer == "/test":
             test(message)
         else:
-            bot.send_message(message.chat.id, "ERROR: try /help")
+            bot.send_message(message.chat.id, "try /help")
         bot.register_next_step_handler_by_chat_id(
             message.chat.id,
             check_answer,
@@ -29,12 +29,12 @@ def check_answer(message, questions, index, correct_letter, lesson_number, level
         return
 
     if user_answer == correct_letter:
-        bot.send_message(message.chat.id, "✅!")
+        bot.send_message(message.chat.id, "✅ Correctly")
         ask_question(message.chat.id, questions, index + 1, lesson_number, level_index)
         incorrect_answers = 0
     else:
         incorrect_answers += 1
-        bot.send_message(message.chat.id, "❌")
+        bot.send_message(message.chat.id, "❌ Incorrect")
         if incorrect_answers >= 2:
             bot.send_message(message.chat.id, helpMessage)
             incorrect_answers = 0

@@ -8,10 +8,10 @@ def start(message):
     bot.send_message(message.chat.id, f"Hi, {message.from_user.first_name}")
     user_id = message.from_user.id
     if check_subscription(user_id):
-        bot.send_message(message.chat.id, "✅GEATE")
+        bot.send_message(message.chat.id, "✅ Verification successful")
         help(message)
     else:
-        not_verified_message = "❌ERROR"
+        not_verified_message = "❌ You need a subscription"
         bot.send_message(message.chat.id, not_verified_message)
 
 @bot.message_handler(commands=["help"])
