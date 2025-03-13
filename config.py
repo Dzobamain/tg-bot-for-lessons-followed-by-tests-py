@@ -12,6 +12,5 @@ bot = telebot.TeleBot(TOKEN)
 # Levels
 LEVELS = ["test/basicLevel/", "test/mediumLevel/", "test/proLevel/"]
 LEVEL_NAMES = ["BASIC Level", "MEDIUM Level", "PRO Level"]
-current_level_index = 0
 helpMessage = "help to user_name"
-incorrect_answers = 0
+special_char = "|" # these characters should NOT appear in questions/answers

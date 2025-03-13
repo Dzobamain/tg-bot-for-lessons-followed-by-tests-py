@@ -20,7 +20,6 @@ def help(message):
 
 @bot.message_handler(commands=["test"])
 def test(message):
-    bot.send_message(message.chat.id, f"Hi, {message.from_user.first_name}")
     start_test(message.chat.id, 1, 0)
 
 bot.polling(none_stop=True, timeout=60)
