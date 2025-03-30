@@ -1,7 +1,19 @@
-from config import bot, LEVELS, LEVEL_NAMES, helpMessage, incorrect_answers
-from subscription_checker import check_subscription
+from config import bot, CHANNEL_ID, helpMessage, incorrect_answers
 from help.help_functions import command_help
 from test.test_functions import start_test
+
+def check_subscription(user_id):
+    if not CHANNEL_ID:
+        return True
+    try:
+        chat_member = bot.get_chat_member(CHANNEL_ID, user_id)
+        if chat_member.status in ['member', 'administrator', 'creator']:
+            return True
+        else:
+            return False
+    except Exception as e:
+        print(f"ERROR: {e}")
+        return False
 
 @bot.message_handler(commands=["start"])
 def start(message):
