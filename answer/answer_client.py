@@ -1,8 +1,8 @@
 from config import bot, helpMessage
-from test.test_functions import ask_question
 
 # Response check
 def check_answer(message, questions, index, correct_letter, lesson_number, level_index):
+    from test.test_functions import ask_question
     from main import start, help, test
     
     global incorrect_answers

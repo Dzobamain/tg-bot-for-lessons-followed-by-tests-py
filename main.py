@@ -1,4 +1,4 @@
-from config import bot, CHANNEL_ID, helpMessage, incorrect_answers
+from config import bot, CHANNEL_ID
 from help.help_functions import command_help
 from test.test_functions import start_test
 

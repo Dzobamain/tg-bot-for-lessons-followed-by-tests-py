@@ -1,7 +1,6 @@
 import random
 import os
-from config import bot, LEVEL_NAMES, LEVELS, helpMessage, special_char
-from answer.answer_client import check_answer
+from config import bot, LEVEL_NAMES, LEVELS, special_char
 
 def start_test(chat_id, lesson_number, level_index):
     if level_index >= len(LEVELS):
@@ -73,6 +72,8 @@ def format_question(question_data):
 
 # Sending questions
 def ask_question(chat_id, questions, index, lesson_number, level_index):
+    from answer.answer_client import check_answer
+    
     if index >= len(questions):
         start_test(chat_id, lesson_number + 1, level_index)
         return
